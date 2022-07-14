@@ -1,0 +1,80 @@
+.Menu
+{
+    width: 90%;
+    height: 80px;
+    display: flex;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    margin: 2% 0 0 5%;
+    background-color: #ffffffee;
+    border-radius: 5px;
+}
+.Menu::-webkit-scrollbar
+{
+    width: 0;
+    height: 0;
+}
+.Menu-Logo
+{
+    min-width: 180px;
+    z-index: 1;
+    background-color: #33333388;
+    margin-right: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    color: #896d5e;
+}
+.Menu-Button
+{
+    margin-right: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 120px;
+    height: 100%;
+    z-index: 1;
+    transition: .2s;
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+    mask-image: url(#panel);
+}
+.Menu-Button:after
+{
+    content: '';
+    display: block;
+    width: 1px;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    background-color: #E3E3E3;
+}
+.Menu-Button:hover
+{
+    background-color: #ffffff;
+    transition: .2s;
+}
+.Menu-Button_Active
+{
+    fill: #fff;
+}
+.Menu-Button_Active:hover
+{
+    fill: #AAAAAA;
+}
+.Menu-Button svg
+{
+    width: 40px;
+    height: 40px;
+}
+
+.Menu-TaskBar
+{
+    width: inherit;
+    height: 100%;
+    background-color: #33333388;
+    z-index: 1;
+    backdrop-filter: blur(10px);
+    margin-bottom: 2px;
+}

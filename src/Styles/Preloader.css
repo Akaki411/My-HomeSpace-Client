@@ -1,0 +1,198 @@
+@font-face {
+    src: url("../media/gaoel.ttf");
+    font-family: Gaoel sans-serif;
+}
+.Preloader
+{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+}
+.Preloader-Content
+{
+    width: 500px;
+    height: 200px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 15%;
+}
+.Preloader-Content svg
+{
+    height: 100%;
+    transform: translateX(100px);
+    animation: translate .5s linear;
+    animation-fill-mode: forwards;
+    animation-delay: 3s;
+}
+.Preloader-Header
+{
+    color: #C8452B;
+    font-family: Gaoel sans-serif;
+    font-size: 26px;
+    animation: translate .5s linear;
+    animation-fill-mode: forwards;
+    transform: translateX(-50px);
+    opacity: 0;
+    animation-delay: 3s;
+}
+.Preloader-Header h1
+{
+    margin-bottom: 20px;
+}
+.SVG-Roof
+{
+    stroke-dasharray: 2000;
+    stroke-dashoffset: 2000;
+    animation: dash 3s linear;
+    animation-fill-mode: forwards;
+    fill: #fff;
+    stroke: #C8452B;
+}
+.SVG-Walls
+{
+    animation: dash2 3s linear;
+    animation-fill-mode: forwards;
+    fill: #fff;
+}
+
+.LoadingState
+{
+    position: absolute;
+    width: 250px;
+    height: 25px;
+    top: 60%;
+    left: calc(50% - 125px);
+    color: #AAAFB2;
+    font-family: Roboto sans-serif;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+}
+.LoadingState p
+{
+    margin-left: 20px;
+}
+#LoadingState_Loading
+{
+    width: 12px;
+    height: 12px;
+    border: 1px solid #AAAFB2;
+    border-radius: 50%;
+    position: relative;
+    animation: rotation .5s linear infinite;
+}
+#LoadingState_Loading div
+{
+    width: 10px;
+    height: 10px;
+    background-color: #fff;
+    position: absolute;
+    top: -4px;
+    left: -4px;
+}
+
+.Loader
+{
+    width: 100%;
+    height: 10px;
+    background-color: #C8452B;
+    position: absolute;
+    bottom: 0;
+    opacity: 0;
+}
+.Loader-Active
+{
+    opacity: 1;
+    transition: 0.5s;
+}
+.Preloader-Disable
+{
+    opacity: 0;
+    transition: 0.5s;
+}
+.Loader-Particle
+{
+    width: 300px;
+    height: 10px;
+    background: linear-gradient(0.25turn, #C8452B, #C88C2B, #C8452B);
+    position: absolute;
+    bottom: 0;
+    animation: loading 6s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+}
+#particle1
+{
+    animation-delay: 2s;
+}
+#particle2
+{
+    animation-delay: 4s;
+}
+
+@keyframes dash
+{
+    0%
+    {
+        stroke-dashoffset: 2000;
+    }
+    70%
+    {
+        stroke-dashoffset: 0;
+        fill: #ffffff;
+    }
+    100%
+    {
+        fill: #C8452B;
+    }
+}
+@keyframes dash2
+{
+    70%
+    {
+        fill: #ffffff;
+        transform: translateY(-30px);
+    }
+    100%
+    {
+        fill: #C8452B;
+        transform: translateY(0);
+    }
+}
+@keyframes loading
+{
+    0%
+    {
+        transform: translateX(-300px);
+    }
+    100%
+    {
+        transform: translateX(calc(100vw + 300px));
+    }
+}
+@keyframes translate
+{
+    100%
+    {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+@keyframes rotation
+{
+    0%
+    {
+        transform: rotateZ(0deg);
+    }
+    100%
+    {
+        transform: rotateZ(360deg);
+    }
+}
